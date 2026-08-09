@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-color: #F6F7F9;
+    --surface-color: #FFFFFF;
+    --border-color: #E5E7EB;
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    
+    --primary-color: #2563EB;
+    --primary-hover: #1D4ED8;
+    --primary-light: #EFF6FF;
+    --primary-light-100: #DBEAFE;
+    --primary-light-200: #BFDBFE;
+    
+    --success-color: #10B981;
+    --success-light: #ECFDF5;
+    --warning-color: #F59E0B;
+    --warning-light: #FFFBEB;
+    --danger-color: #EF4444;
+    --danger-light: #FFF1F2;
+    --info-color: #06B6D4;
+    --info-light: #F0F9FF;
+    
+    --sidebar-bg: #111827;
+    --sidebar-text: #9CA3AF;
+    --sidebar-active-bg: #1F2937;
+    --sidebar-active-text: #FFFFFF;
+  }
+
+  .dark {
+    --bg-color: #080B12;
+    --surface-color: #111827;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #F3F4F6;
+    --text-secondary: #9CA3AF;
+    
+    --primary-color: #3B82F6;
+    --primary-hover: #2563EB;
+    --primary-light: #1E293B;
+    --primary-light-100: #1E293B;
+    --primary-light-200: #334155;
+    
+    --success-color: #10B981;
+    --success-light: #064E3B;
+    --warning-color: #F59E0B;
+    --warning-light: #78350F;
+    --danger-color: #EF4444;
+    --danger-light: #7F1D1D;
+    --info-color: #06B6D4;
+    --info-light: #0C4A6E;
+    
+    --sidebar-bg: #0D111A;
+    --sidebar-text: #9CA3AF;
+    --sidebar-active-bg: #1F232B;
+    --sidebar-active-text: #FFFFFF;
+  }
+
+  /* Core custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+  }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Form Inputs Defaults */
+  input, select, textarea {
+    background-color: var(--surface-color);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+  }
+}
+
+/* Precise animations (fast, subtle, purposeful) */
+@keyframes slideInUp {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom interactive classes for lists */
+.table-container {
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+}
+
+@layer utilities {
+  /* Global overrides to map standard Tailwind utilities to theme variables */
+  .bg-white {
+    background-color: var(--surface-color) !important;
+  }
+  .bg-gray-50 {
+    background-color: var(--bg-color) !important;
+  }
+  .bg-gray-100 {
+    background-color: var(--border-color) !important;
+  }
+  .border-gray-50 {
+    border-color: var(--border-color) !important;
+  }
+  .border-gray-100 {
+    border-color: var(--border-color) !important;
+  }
+  .border-gray-200 {
+    border-color: var(--border-color) !important;
+  }
+  .text-gray-900 {
+    color: var(--text-primary) !important;
+  }
+  .text-gray-800 {
+    color: var(--text-primary) !important;
+  }
+  .text-gray-750 {
+    color: var(--text-primary) !important;
+  }
+  .text-gray-700 {
+    color: var(--text-primary) !important;
+  }
+  .text-gray-600 {
+    color: var(--text-secondary) !important;
+  }
+  .text-gray-500 {
+    color: var(--text-secondary) !important;
+  }
+  .text-gray-400 {
+    color: var(--text-secondary) !important;
+  }
+  .divide-gray-50 > :not([hidden]) ~ :not([hidden]) {
+    border-color: var(--border-color) !important;
+  }
+  .divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+    border-color: var(--border-color) !important;
+  }
+
+  /* Accent gradient backgrounds */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #3B82F6, #6366F1) !important;
+  }
+  .bg-gradient-purple {
+    background: linear-gradient(135deg, #6366F1, #8B5CF6) !important;
+  }
+  .bg-gradient-success {
+    background: linear-gradient(135deg, #10B981, #06B6D4) !important;
+  }
+  .bg-gradient-warning {
+    background: linear-gradient(135deg, #F59E0B, #F97316) !important;
+  }
+  .bg-gradient-pink {
+    background: linear-gradient(135deg, #EC4899, #8B5CF6) !important;
+  }
+  .bg-gradient-cyan {
+    background: linear-gradient(135deg, #06B6D4, #3B82F6) !important;
+  }
+}
