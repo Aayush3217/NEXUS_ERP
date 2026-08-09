@@ -4,11 +4,10 @@ import api from '../services/api';
 import { useAuth } from '../store/authContext';
 import { useToast } from '../store/toastContext';
 import { FileText, Search, Plus, Eye, Calendar, User } from 'lucide-react';
-import { 
-  Button, Input, Select, Badge, Card, PageHeader, EmptyState, Skeleton 
+import {
+  Button, Input, Select, Badge, Card, PageHeader, EmptyState, Skeleton
 } from '../components/UI';
 import { Pagination } from '../components/Pagination';
-import { ChallanStatus } from '@prisma/client';
 
 export const Challans = () => {
   const { user } = useAuth();
